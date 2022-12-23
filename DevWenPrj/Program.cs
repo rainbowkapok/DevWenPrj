@@ -6,14 +6,12 @@ var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentCla
 logger.Debug("init main");
 try
 {
-    var builder = WebApplication.CreateBuilder(args);
-
-    
+    var builder = WebApplication.CreateBuilder(args);    
 
     //將NLog註冊到此專案內
     builder.Logging.ClearProviders();
     //設定log紀錄的最小等級
-    builder.Logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Information);
+    builder.Logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
     builder.Host.UseNLog();
     //builder.Services.AddControllers();
    

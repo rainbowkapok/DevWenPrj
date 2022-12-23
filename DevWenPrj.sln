@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevWenPrj", "DevWenPrj\DevWenPrj.csproj", "{5F028031-9EF4-4069-AC6C-C2D926D5D214}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevWenPrj", "DevWenPrj\DevWenPrj.csproj", "{5F028031-9EF4-4069-AC6C-C2D926D5D214}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevWenAPI", "DevWenAPI\DevWenAPI.csproj", "{1C0959B8-6C25-41A6-B3BC-FF3A31BC37B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{5F028031-9EF4-4069-AC6C-C2D926D5D214}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F028031-9EF4-4069-AC6C-C2D926D5D214}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F028031-9EF4-4069-AC6C-C2D926D5D214}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C0959B8-6C25-41A6-B3BC-FF3A31BC37B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C0959B8-6C25-41A6-B3BC-FF3A31BC37B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C0959B8-6C25-41A6-B3BC-FF3A31BC37B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C0959B8-6C25-41A6-B3BC-FF3A31BC37B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

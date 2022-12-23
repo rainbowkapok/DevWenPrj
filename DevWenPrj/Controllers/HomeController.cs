@@ -1,6 +1,7 @@
 ﻿using DevWenPrj.Models;
 using Microsoft.AspNetCore.Mvc;
 using NLog;
+using NLog.Fluent;
 using PrjWen.ViewModel;
 using System.Diagnostics;
 using System.Text.Json;
@@ -22,32 +23,23 @@ namespace DevWenPrj.Controllers
         {
             if (!HttpContext.Session.Keys.Contains(CSectionClass.LoginUser))
             {
+                _logger.LogDebug("Debug用，還沒登入");
+                Utility.MyLog("Debug用，測試UtilityMyLog");
                 return RedirectToAction("Login");
             }
-            #region
-            // Trace = 0, Debug = 1, Information = 2, Warning = 3, Error = 4, Critical = 5, and None = 6.
-            //Trace - 最常見的記錄資訊，一般用於普通輸出
-            //Debug - 同樣是記錄資訊，不過出現的頻率要比Trace少一些，一般用來除錯程式
-            //Info - 資訊型別的訊息
-            //Warn - 警告資訊，一般用於比較重要的場合
-            //Error - 錯誤資訊e
-            //Fatal - 致命異常資訊。一般來講，發生致命異常之後程式將無法繼續執行。
-            //自上而下，等級遞增。
-
-            //_logger.LogTrace("Loggin Level=0 (Trace)");
-            //_logger.LogDebug("Loggin Level=1 (Debug)");
-            //_logger.LogInformation("Loggin Level=2 (Information)");
-            //_logger.LogWarning("Loggin Level=3 (Warning)");
-            //_logger.LogError("Loggin Level=4 (Error)");
-            //_logger.LogCritical("Loggin Level=5 (Critical)");
-            #endregion
+         
             return View();
         }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+              
+        #region
+        // Trace = 0, Debug = 1, Information = 2, Warning = 3, Error = 4, Critical = 5, and None = 6.
+        //Trace - 最常見的記錄資訊，一般用於普通輸出
+        //Debug - 同樣是記錄資訊，不過出現的頻率要比Trace少一些，一般用來除錯程式
+        //Info - 資訊型別的訊息
+        //Warn - 警告資訊，一般用於比較重要的場合
+        //Error - 錯誤資訊e
+        //Fatal - 致命異常資訊。一般來講，發生致命異常之後程式將無法繼續執行。
+        #endregion
         public IActionResult Login()
         {
 
@@ -58,7 +50,6 @@ namespace DevWenPrj.Controllers
         [HttpPost]
         public IActionResult Login(CMemberViewModel cmv)
         {
-
             //Member會員 Member = (new WenDBContext()).Member會員s.FirstOrDefault(m => m.Email信箱.Equals(cmv.txtEmail));
             Member會員 Member = _dbcontext.Member會員s.FirstOrDefault(m => m.Email信箱.Equals(cmv.txtEmail));
             if (Member != null)
@@ -77,6 +68,10 @@ namespace DevWenPrj.Controllers
                 }
             }
             return View();           
+        }
+        public IActionResult Privacy()
+        {
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
